@@ -219,6 +219,7 @@ const Hero = () => {
           animation: slide-up 0.8s ease-out forwards;
         }
       `}</style>
+      
     </div>
   );
 };
