@@ -30,9 +30,11 @@ const Header = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="text-5xl font-bold text-blue-900">
-                osto
-              </div>
+              <Link to="/" className="no-underline">
+                <div className="text-5xl font-bold text-blue-900">
+                  osto
+                </div>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}

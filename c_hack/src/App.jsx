@@ -8,6 +8,7 @@ import Demo from './pages/Demo'
 import Es from './pages/Es'
 import Ns from './pages/Ns'
 import Cs from './pages/Cs'
+import Pricing from './components/Pricing'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Header /> {/* Always visible */}
         <Routes>
           {/* Home Page */}
-          <Route path="/" element={<><Hero /><Features /></>} />
+          <Route path="/" element={<><Hero /><Features /> <Pricing/></>} />
 
           {/* Static Pages */}
           <Route path="/about-us" element={<Ab />} />
