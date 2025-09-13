@@ -30,7 +30,7 @@ const Header = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo - Purple */}
             <div className="flex items-center">
-              <div className="text-5xl font-bold text-purple-600">
+              <div className="text-5xl font-bold text-navy-900">
                 osto
               </div>
             </div>
