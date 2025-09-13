@@ -4,7 +4,6 @@ import { Search, Globe, Menu } from 'lucide-react';
 const Header = () => {
   return (
     <header className="bg-white text-slate-800 shadow-sm">
-      {/* Top utility bar - Navy Blue */}
       <div className="bg-blue-900 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm text-white">
@@ -38,10 +37,10 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#" className="hover:text-purple-600 transition-colors font-medium text-slate-700">
-                Products
+                About us
               </a>
               <a href="#" className="hover:text-purple-600 transition-colors font-medium text-slate-700">
-                Solutions
+                Products
               </a>
               <a href="#" className="hover:text-purple-600 transition-colors font-medium text-slate-700">
                 Support

@@ -151,7 +151,7 @@ const Hero = () => {
 
       {/* Trust Bar */}
       <div className="bg-slate-800/50 border-t border-slate-700/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8">
             <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Compliant, Certified, and Ready for Business
