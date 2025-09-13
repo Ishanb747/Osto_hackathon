@@ -9,6 +9,7 @@ import Es from './pages/Es'
 import Ns from './pages/Ns'
 import Cs from './pages/Cs'
 import Pricing from './components/Pricing'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -17,16 +18,16 @@ function App() {
         <Header /> {/* Always visible */}
         <Routes>
           {/* Home Page */}
-          <Route path="/" element={<><Hero /><Features /> <Pricing/></>} />
+          <Route path="/" element={<><Hero /><Features /> <Pricing/><Footer/> </>} />
 
           {/* Static Pages */}
-          <Route path="/about-us" element={<Ab />} />
-          <Route path="/demo" element={<Demo />} />
+          <Route path="/about-us" element={<><Ab /><Footer/></>} />
+          <Route path="/demo" element={<><Demo /><Footer/></>} />
 
           {/* Feature Pages */}
-          <Route path="/features/endpoint-security" element={<Es/>} />
-          <Route path="/features/network-security" element={<Ns/>} />
-          <Route path="/features/cloud-security" element={<Cs/>} />
+          <Route path="/features/endpoint-security" element={<><Es /><Footer/></>} />
+          <Route path="/features/network-security" element={<><Ns /><Footer/></>} />
+          <Route path="/features/cloud-security" element={<><Cs /><Footer/></>} />
           {/* Optional: All features overview */}
           <Route path="/features" element={<div>All Features Overview</div>} />
         </Routes>
