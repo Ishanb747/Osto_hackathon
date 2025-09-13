@@ -9,29 +9,23 @@ const Hero = () => {
       icon: Shield,
       headline: "Enterprise-Grade Security, Radically Simplified.",
       subheadline: "Osto is the all-in-one cybersecurity platform that lets startups and fast-growing businesses secure their entire digital footprint in minutes. No complexity, no dedicated team required.",
-      highlight: "Complete Protection"
+      highlight: "Complete Protection",
+      image: "/1.png"
     },
     {
       icon: Zap,
       headline: "Go Live in 9 Minutes, Not 90 Days.",
       subheadline: "Onboard your entire organization faster than a coffee break. Automated discovery and simple deployment mean you're protected from day one with zero technical expertise required.",
-      highlight: "Instant Setup"
+      highlight: "Instant Setup",
+      image: "/2.png"
     },
     {
       icon: TrendingUp,
       headline: "Turn Security Into Your Competitive Edge.",
       subheadline: "Win bigger deals and build customer trust with enterprise-grade compliance. Meet rigorous standards like ISO 27001 and SOC 2, accelerating your growth and market credibility.",
-      highlight: "Business Growth"
+      highlight: "Business Growth",
+      image: "/3.png"
     }
-  ];
-
-  const companies = [
-    { name: "Powering Ambitions", logo: "PA" },
-    { name: "CyberAssure", logo: "CA" },
-    { name: "Credit Ghar", logo: "CG" },
-    { name: "Event Graphia", logo: "EG" },
-    { name: "Handpickd", logo: "HP" },
-    { name: "Drizz", logo: "DZ" }
   ];
 
   useEffect(() => {
@@ -40,7 +34,7 @@ const Hero = () => {
     }, 4000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const IconComponent = slides[currentSlide].icon;
 
@@ -51,7 +45,7 @@ const Hero = () => {
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 lg:pt-32 lg:pb-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
@@ -68,14 +62,14 @@ const Hero = () => {
 
               {/* Animated Content */}
               <div className="space-y-6">
-                <h1 
+                <h1
                   key={`headline-${currentSlide}`}
                   className="text-4xl lg:text-6xl font-bold leading-tight animate-fade-in"
                 >
                   {slides[currentSlide].headline}
                 </h1>
-                
-                <p 
+
+                <p
                   key={`subheadline-${currentSlide}`}
                   className="text-xl text-slate-300 max-w-2xl animate-fade-in-delay"
                 >
@@ -102,48 +96,39 @@ const Hero = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-12 h-1 rounded-full transition-all duration-300 ${
-                      index === currentSlide 
-                        ? 'bg-blue-400' 
-                        : 'bg-white/20 hover:bg-white/40'
-                    }`}
+                    className={`w-12 h-1 rounded-full transition-all duration-300 ${index === currentSlide
+                      ? 'bg-blue-400'
+                      : 'bg-white/20 hover:bg-white/40'
+                      }`}
                   />
                 ))}
               </div>
             </div>
 
-            {/* Visual Element */}
+            {/* Enhanced Visual Element with Image */}
             <div className="relative">
               <div className="relative z-10">
-                <div 
+                <div
                   key={`visual-${currentSlide}`}
-                  className="bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-lg rounded-3xl p-8 border border-white/10 shadow-2xl animate-slide-up"
+                  className="bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-lg rounded-3xl overflow-hidden border border-white/10 shadow-2xl animate-slide-up"
                 >
-                  <div className="flex items-center justify-center mb-6">
-                    <div className="bg-blue-500/20 rounded-full p-6">
-                      <IconComponent className="w-16 h-16 text-blue-400" />
-                    </div>
-                  </div>
-                  
-                  <div className="text-center text-white">
-                    <h3 className="text-2xl font-bold mb-4">
-                      {slides[currentSlide].highlight}
-                    </h3>
-                    <div className="space-y-3">
-                      <div className="bg-white/5 rounded-lg p-3 backdrop-blur-sm">
-                        <div className="h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded animate-pulse"></div>
-                      </div>
-                      <div className="bg-white/5 rounded-lg p-3 backdrop-blur-sm">
-                        <div className="h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded animate-pulse delay-75"></div>
-                      </div>
-                      <div className="bg-white/5 rounded-lg p-3 backdrop-blur-sm">
-                        <div className="h-2 bg-gradient-to-r from-purple-400 to-pink-500 rounded animate-pulse delay-150"></div>
+                  {/* Image Section */}
+                  <div className="relative h-96 overflow-hidden">
+                    <img
+                      src={slides[currentSlide].image}
+                      alt={slides[currentSlide].highlight}
+                      className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <div className="bg-blue-500/30 rounded-full p-3 backdrop-blur-sm">
+                        <IconComponent className="w-8 h-8 text-blue-300" />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               {/* Floating Elements */}
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-400/10 rounded-full blur-xl animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-400/10 rounded-full blur-xl animate-pulse delay-1000"></div>
@@ -152,59 +137,65 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Trust Bar */}
-      <div className="bg-slate-800/50 border-t border-slate-700/50 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center mb-8">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
-              Compliant, Certified, and Ready for Business
+      {/* Trust Bar with Real Company Logos */}
+      <div className="bg-[#f6f8ff] border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* New Section Title and Subtitle */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a237e] mb-4">
+              Your Data is Our Top Priority.
             </h2>
-            
-            {/* Certifications */}
-            <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
-              <div className="flex items-center space-x-2 text-green-400">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-medium">ISO 27001 Certified</span>
-              </div>
-              <div className="flex items-center space-x-2 text-green-400">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-medium">SOC 2 Type II Compliant</span>
-              </div>
-              <div className="flex items-center space-x-2 text-green-400">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-medium">GDPR Ready</span>
-              </div>
+            <p className="text-lg md:text-xl text-[#5c6bc0]">
+              At Osto, we prioritize data privacy and uphold the highest standards of security.
+            </p>
+          </div>
+
+          {/* Certifications Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* ISO 27001 */}
+            <div className="bg-white rounded-2xl shadow px-8 py-8 flex flex-col items-start">
+              {/* <img src="/iso27001.svg" alt="ISO 27001" className="w-14 h-14 mb-4" /> */}
+              <h3 className="text-lg font-bold text-[#1a237e] mb-2">ISO 27001 Certified</h3>
+              <p className="text-slate-600 text-sm">
+                Our systems meet international standards for security management.
+              </p>
+            </div>
+            {/* SOC 2 */}
+            <div className="bg-white rounded-2xl shadow px-8 py-8 flex flex-col items-start">
+              {/* <img src="/soc2.svg" alt="SOC 2 Type II" className="w-14 h-14 mb-4" /> */}
+              <h3 className="text-lg font-bold text-[#1a237e] mb-2">SOC 2 Type II Compliant</h3>
+              <p className="text-slate-600 text-sm">
+                Independently verified security, availability, and confidentiality.
+              </p>
+            </div>
+            {/* GDPR */}
+            <div className="bg-white rounded-2xl shadow px-8 py-8 flex flex-col items-start">
+              {/* <img src="/gdpr.svg" alt="GDPR" className="w-14 h-14 mb-4" /> */}
+              <h3 className="text-lg font-bold text-[#1a237e] mb-2">GDPR Compliant</h3>
+              <p className="text-slate-600 text-sm">
+                We adhere to strict data privacy regulations and best practices.
+              </p>
             </div>
           </div>
 
           {/* Company Logos */}
           <div className="text-center">
-            <h3 className="text-sm font-medium text-slate-400 mb-6">
-              Trusted by innovative companies
+            <h3 className="text-base font-semibold text-[#1a237e] mb-8">
+              Trusted by industry leaders
             </h3>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
-              {companies.map((company, index) => (
-                <div 
-                  key={company.name}
-                  className="flex flex-col items-center space-y-2 hover:opacity-100 transition-opacity duration-200"
-                >
-                  <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10">
-                    <span className="text-white font-bold text-sm">
-                      {company.logo}
-                    </span>
-                  </div>
-                  <span className="text-xs text-slate-400 text-center">
-                    {company.name}
-                  </span>
-                </div>
-              ))}
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 py-2">
+              <img src="/logo1.png" alt="Powering Ambitions" className="h-7 object-contain" />
+              <img src="/logo2.png" alt="CyberAssure" className="h-7 object-contain" />
+              <img src="/logo3.png" alt="Credit Ghar" className="h-7 object-contain" />
+              <img src="/logo4.png" alt="Event Graphia" className="h-7 object-contain" />
+              <img src="/logo5.png" alt="Handpicked" className="h-7 object-contain" />
+              {/* <img src="/logo6.png" alt="Drizz" className="h-7 object-contain" /> */}
             </div>
           </div>
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
