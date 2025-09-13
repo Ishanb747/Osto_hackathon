@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import { Search, Globe, Menu } from 'lucide-react';
 
 const Header = () => {
@@ -16,8 +17,6 @@ const Header = () => {
               </a>
             </div>
             <div className="flex items-center space-x-6">
-
-
             </div>
           </div>
         </div>
@@ -36,9 +35,9 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="hover:text-purple-600 transition-colors font-medium text-slate-700">
+              <Link to="/about-us" className="hover:text-purple-600 transition-colors font-medium text-slate-700">
                 About us
-              </a>
+              </Link>
               <a href="#" className="hover:text-purple-600 transition-colors font-medium text-slate-700">
                 Products
               </a>

@@ -5,18 +5,19 @@ import {
   Mail, 
   Cloud, 
   Monitor, 
-  Search,
   ChevronRight,
   Lock,
   Smartphone,
   FileText
 } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
+    
 const Features = () => {
   const features = [
     {
       icon: Shield,
       title: "Endpoint Security",
+      path: "/features/endpoint-security",
       description: "Superior cyber protection keeps your organization and data safe from malware and advanced attacks.",
       details: [
         "Next-Gen Antimalware Engine",
@@ -28,6 +29,7 @@ const Features = () => {
     {
       icon: Network,
       title: "Network Security",
+      path: "/features/network-security",
       description: "Securely connect your networks with next-gen firewalls, access points and switches to support a ZTNA architecture.",
       details: [
         "Zero Trust Network Access (ZTNA)",
@@ -36,10 +38,10 @@ const Features = () => {
         "Network Threat Detection"
       ]
     },
-
     {
       icon: Cloud,
       title: "Cloud Security",
+      path: "/features/cloud-security",
       description: "Cloud workload protection with CPSM processes to monitor systems and infrastructure.",
       details: [
         "Web App & API Protection",
@@ -47,7 +49,8 @@ const Features = () => {
         "Cloud Security Posture Management",
         "AI Security Posture Management"
       ]
-    }
+    },
+   
   ];
 
   return (
@@ -105,13 +108,16 @@ const Features = () => {
                     </ul>
                   </div>
 
-                  {/* Learn More Button */}
-                  <button className="flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300">
+                  {/* Learn More Link */}
+                  <Link 
+                    to={feature.path} 
+                    className="flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300"
+                  >
                     <span>Learn More</span>
                     <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-700 transition-colors duration-300">
                       <ChevronRight className="w-4 h-4 text-white" />
                     </div>
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
@@ -148,9 +154,12 @@ const Features = () => {
                 </div>
               </div>
 
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
+              <Link 
+                to="/features" 
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 inline-block"
+              >
                 Explore All Features
-              </button>
+              </Link>
             </div>
 
             <div className="relative">
@@ -159,7 +168,10 @@ const Features = () => {
                   {[Shield, Network, Cloud, Mail].map((Icon, idx) => (
                     <div key={idx} className="bg-white/5 rounded-lg p-4 text-center backdrop-blur-sm">
                       <Icon className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                      <div className="h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded animate-pulse" style={{animationDelay: `${idx * 200}ms`}}></div>
+                      <div 
+                        className="h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded animate-pulse" 
+                        style={{animationDelay: `${idx * 200}ms`}}
+                      ></div>
                     </div>
                   ))}
                 </div>
@@ -168,7 +180,11 @@ const Features = () => {
                   <div className="text-white font-medium mb-2">Integrated Protection</div>
                   <div className="flex justify-center space-x-1">
                     {[1,2,3,4,5].map((dot) => (
-                      <div key={dot} className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{animationDelay: `${dot * 100}ms`}}></div>
+                      <div 
+                        key={dot} 
+                        className="w-2 h-2 bg-green-400 rounded-full animate-pulse" 
+                        style={{animationDelay: `${dot * 100}ms`}}
+                      ></div>
                     ))}
                   </div>
                 </div>

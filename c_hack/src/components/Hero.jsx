@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Zap, TrendingUp } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -87,9 +87,12 @@ const Hero = () => {
                   <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
                     Get Started for Free
                   </button>
-                  <button className="border border-white/30 hover:border-white/60 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 backdrop-blur-sm">
+                    <Link 
+                    to="/demo" 
+                    className="border border-white/30 hover:border-white/60 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 backdrop-blur-sm"
+                    >
                     Request a Demo
-                  </button>
+                    </Link>
                 </div>
               </div>
 
