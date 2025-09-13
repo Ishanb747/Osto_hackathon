@@ -11,7 +11,7 @@ const Header = () => {
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center">
               <span>
-                Osto has been named a Leader in the 2025 Gartner® Magic Quadrant™ for Endpoint Protection Platforms for the 16th consecutive report.
+                Osto is the Security Startup of the Year also recognized as one of the fastest-growing cybersecurity startups from India
               </span>
               <a
                 href="#"
