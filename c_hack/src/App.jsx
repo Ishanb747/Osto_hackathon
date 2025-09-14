@@ -22,6 +22,7 @@ function App() {
 
           {/* Static Pages */}
           <Route path="/about-us" element={<><Ab /><Footer/></>} />
+          <Route path="/contact-us" element={<><Demo /><Footer/></>} />
           <Route path="/demo" element={<><Demo /><Footer/></>} />
 
           {/* Feature Pages */}

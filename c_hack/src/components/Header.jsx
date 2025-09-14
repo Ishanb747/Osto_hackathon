@@ -57,9 +57,9 @@ const Header = () => {
               <a href="#" className="hover:text-blue-600 transition-colors font-medium text-blue-900">
                 Company
               </a>
-              <a href="#" className="hover:text-blue-600 transition-colors font-medium text-blue-900">
+              <Link to="/contact-us" className="hover:text-blue-600 transition-colors font-medium text-blue-900">
                 Contact Us
-              </a>
+              </Link>
             </nav>
 
             {/* CTA Section */}
